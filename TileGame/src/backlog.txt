@@ -1,0 +1,31 @@
+Done:
+- Gameboard
+- Different tiles
+- multiple layers
+- removing same tiles
+- Game window
+- drawing tiles
+- clicking
+- bombing
+- column dropdown
+- multiple modes
+
+TODO:
+- game saving(to log)
+- levels in database
+- tile_textures
+- bg_textures
+- game start window
+- adding bombs
+- counting points
+- column joining (horizontal)
+- animation
+- level transition
+- game over condition
+- bomb mode as state pattern
+
+maybe:
+- hints
+- level transition screen
+- game board
+- sound effects

@@ -1,0 +1,5 @@
+
+^squid:UselessImportCheck".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ö¶·Îü-
+Jsquid:S1481"'Remove this unused "GW" local variable.(‘“¤¿ùÿÿÿÿ8ö¶·Îü-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘“¤¿ùÿÿÿÿ8ö¶·Îü-
+Ysquid:S1854"6Remove this useless assignment to local variable "GW".(‘“¤¿ùÿÿÿÿ8ö¶·Îü-
