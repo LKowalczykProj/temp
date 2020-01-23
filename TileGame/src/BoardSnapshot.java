@@ -54,19 +54,21 @@ public class BoardSnapshot {
         for(int i=0;i<width;i++){
             for(int j=0;j<height;j++){
                 if(board.getValue(i,j) != ERASE_VALUE && layer.get(i).get(j) == ERASE_VALUE){
-                    board.bombValue(i,j);
+                    board.eraseValue(i,j);
                 }
             }
         }
     }
 
     public void print(){
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$");
         for(int i=0;i<height;i++){
             for(int j=0;j<width;j++){
                 System.out.print(layer.get(j).get(i)+" ");
             }
             System.out.println("");
         }
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$");
     }
 
     public boolean checkForSets(){

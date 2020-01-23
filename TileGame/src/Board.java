@@ -7,6 +7,7 @@ public class Board {
     private ArrayList<Integer> comboCounter;
     private int width, height;
     private static int ERASE_VALUE = -1;
+    private boolean bombed;
 
     public Board(int width, int height, int layers, int tile_ammount){
         this.width = width;
@@ -35,10 +36,19 @@ public class Board {
         }
     }
 
-    public void popValue(int x, int y){
+    public void pop(int x, int y){
+        popValue(x,y);
+        clearEmptyColumns();
+        bombed = false;
+    }
+
+    private void popValue(int x, int y){
         if(getValue(x,y)!=ERASE_VALUE){
             BoardSnapshot snapshot = new BoardSnapshot(this);
-            comboCounter.add(snapshot.pop(x,y));
+            int result = snapshot.pop(x,y);
+            if(result>0){
+                comboCounter.add(result);
+            }
             snapshot.mergeLayer(this);
             removeHoles();
         }
@@ -46,9 +56,11 @@ public class Board {
 
     public void bombValue(int x, int y){
         if(getValue(x,y)!=ERASE_VALUE){
-            boardMatrix.get(x).get(y).remove(0);
+            eraseValue(x,y);
             removeHoles();
+            bombed = true;
         }
+        clearEmptyColumns();
     }
 
     public int getHeight() {
@@ -59,12 +71,14 @@ public class Board {
         return width;
     }
     public void print(){
+        System.out.println("#####################");
         for(int i=0;i<height;i++){
             for(int j=0;j<width;j++){
                 System.out.print(getValue(j,i)+" ");
             }
             System.out.println("");
         }
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
     }
 
     public boolean checkForSets(){
@@ -80,6 +94,7 @@ public class Board {
 
     private void stabilizeColumn(int columnNumber){
         boolean holeFound = true;
+        int holePos = -1;
         while(holeFound){
             holeFound = false;
             for(int i = height-1; i>0; i--){
@@ -89,8 +104,14 @@ public class Board {
                     boardMatrix.get(columnNumber).set(i,boardMatrix.get(columnNumber).get(i-1));
                     boardMatrix.get(columnNumber).set(i-1,temp);
                     holeFound = true;
+                    if(holePos==-1) {
+                        holePos = i;
+                    }
                 }
             }
+        }
+        if(holePos!=-1) {
+            popValue(columnNumber, holePos);
         }
     }
 
@@ -104,6 +125,46 @@ public class Board {
     }
 
     public double getBombs(){
-        return comboCounter.size()*0.5;
+        if(comboCounter.size()>0 && !bombed) {
+            double value = (comboCounter.size()-1) * 0.5;
+            if(value>2){
+                return 2;
+            }
+            return value;
+        }
+        return 0;
+    }
+
+    public int getLevel(int x, int y){
+        return boardMatrix.get(x).get(y).size();
+    }
+
+    private void clearEmptyColumns(){
+        boolean emptyColumns = true;
+        while(emptyColumns) {
+            emptyColumns = false;
+            for (int i = 0; i < width - 1; i++) {
+                if (getValue(i, height - 1) == ERASE_VALUE && getValue(i + 1, height - 1) != ERASE_VALUE) {
+                    removeEmptyColumn(i);
+                    emptyColumns = true;
+                }
+            }
+        }
+    }
+
+    private void removeEmptyColumn(int column){
+        for(int i=0; i<height;i++){
+            if(getValue(column+1,i) != ERASE_VALUE){
+                ArrayList<Tile> temp = boardMatrix.get(column).get(i);
+                boardMatrix.get(column).set(i, boardMatrix.get(column+1).get(i));
+                boardMatrix.get(column+1).set(i, temp);
+            }
+        }
+    }
+
+    public void eraseValue(int x, int y){
+        if(getValue(x,y) != ERASE_VALUE) {
+            boardMatrix.get(x).get(y).remove(0);
+        }
     }
 }

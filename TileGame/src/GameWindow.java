@@ -1,7 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 
 public class GameWindow extends JFrame {
@@ -12,31 +16,33 @@ public class GameWindow extends JFrame {
         public void paint(Graphics g) {
             g.setColor(Color.LIGHT_GRAY);
             g.fillRect(0,0,width,height);//34x11 50x40 1400x720 II 1500x800
+            g.drawImage(background,offsetX,offsetY,null);
             int spaceX;
             int spaceY;
             spaceY= 0;
+            ColorModifier mod = new ColorModifier();
             g.setColor(Color.BLACK);
             for(int i=0;i<vertAm;i++){
                 spaceX = 0;
                 for(int j=0;j<horizAm;j++){
                     if(gameBoard.getValue(j,i) == 0) {
-                        g.setColor(new Color(110,175,250));
+                        g.setColor(mod.darken(new Color(110,175,250),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
                     if(gameBoard.getValue(j,i) == 1) {
-                        g.setColor(new Color(100,240,80));
+                        g.setColor(mod.darken(new Color(100,240,80),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
                     if(gameBoard.getValue(j,i) == 2) {
-                        g.setColor(new Color(240,150,235));
+                        g.setColor(mod.darken(new Color(240,150,235),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
                     if(gameBoard.getValue(j,i) == 3) {
-                        g.setColor(new Color(225,20,90));
+                        g.setColor(mod.darken(new Color(238, 239, 29),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
                     if(gameBoard.getValue(j,i) == 4) {
-                        g.setColor(new Color(245,155,105));
+                        g.setColor(mod.darken(new Color(245,155,105),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
                     spaceX+=spacing;
@@ -48,10 +54,18 @@ public class GameWindow extends JFrame {
             for(int i=0;i<vertAm;i++){
                 spaceX = 0;
                 for(int j=0;j<horizAm;j++){
-                    g.drawRect(offsetX+j*tileWidth+spaceX,offsetY+i*tileHeight+spaceY,tileWidth,tileHeight);
+                    if(gameBoard.getLevel(j,i)!=0) {
+                        g.drawRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
+                    }
                     spaceX+=spacing;
                 }
                 spaceY+=spacing;
+            }
+            if(bombMode) {
+                g.setColor(Color.WHITE);
+                g.fillOval(mouseX - 15, mouseY - 15, 30, 30);
+                g.setColor(Color.BLACK);
+                g.fillOval(mouseX - 13, mouseY - 13, 26, 26);
             }
         }
     }
@@ -65,6 +79,8 @@ public class GameWindow extends JFrame {
     private double bombs;
     private Board gameBoard;
     private boolean bombMode;
+    private BufferedImage background;
+    private int mouseX, mouseY;
 
     public GameWindow(){
         setDefaultValues();
@@ -84,13 +100,15 @@ public class GameWindow extends JFrame {
                 y = (y-modY)/(tileHeight+spacing);
                 if(modX<=tileWidth && modY<=tileHeight) {
                     if(!bombMode){
-                        gameBoard.popValue(x,y);
+                        gameBoard.pop(x,y);
+                        bombs += gameBoard.getBombs();
+                        score += gameBoard.getScore();
                     }
                     if(bombMode){
                         gameBoard.bombValue(x,y);
+                        bombs -=1;
+                        score +=1;
                     }
-                    bombs += gameBoard.getBombs();
-                    score += gameBoard.getScore();
                     bombMode = !gameBoard.checkForSets();
                 }
                 mainPanel.repaint();
@@ -117,6 +135,20 @@ public class GameWindow extends JFrame {
 
             }
         });
+
+        mainPanel.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                mouseX = e.getX();
+                mouseY = e.getY();
+                mainPanel.repaint();
+            }
+        });
         add(mainPanel);
 
 
@@ -127,8 +159,8 @@ public class GameWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         width = (int)screenSize.getWidth()-100;
         height = (int)screenSize.getHeight()-100;
-        horizAm = 26;
-        vertAm = 10;
+        horizAm = 26;//26
+        vertAm = 10;//10
         tileHeight = 80;
         tileWidth = 60;
         spacing = 5;
@@ -141,12 +173,18 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(null);
         setResizable(false);
+        setTitle("TileGame - Level 1");
     }
 
     public void resetGame(){
-        gameBoard = new Board(horizAm, vertAm, 3, 3);
+        gameBoard = new Board(horizAm, vertAm, 3, 5);
         bombMode = !gameBoard.checkForSets();
         score = 0;
         bombs = 0;
+        try{
+            background = ImageIO.read(new File("imgs/bg/bgIm5.jpg"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

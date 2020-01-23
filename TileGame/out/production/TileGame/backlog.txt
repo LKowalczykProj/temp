@@ -9,6 +9,10 @@ Done:
 - bombing
 - column dropdown
 - multiple modes
+- adding bombs
+- counting points
+- column joining (horizontal)
+- bomb cursor
 
 TODO:
 - game saving(to log)
@@ -16,9 +20,6 @@ TODO:
 - tile_textures
 - bg_textures
 - game start window
-- adding bombs
-- counting points
-- column joining (horizontal)
 - animation
 - level transition
 - game over condition
