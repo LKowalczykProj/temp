@@ -13,20 +13,18 @@ Done:
 - counting points
 - column joining (horizontal)
 - bomb cursor
+- game over condition
+- game start window
+- bg_textures
 
 TODO:
-- game saving(to log)
 - levels in database
-- tile_textures
-- bg_textures
-- game start window
-- animation
 - level transition
-- game over condition
-- bomb mode as state pattern
 
 maybe:
 - hints
 - level transition screen
-- game board
 - sound effects
+- game saving(to log)
+- animation
+- tile_textures

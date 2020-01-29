@@ -61,6 +61,15 @@ public class GameWindow extends JFrame {
                 }
                 spaceY+=spacing;
             }
+
+            g.setColor(Color.WHITE);
+            g.fillOval(100, 20, 30, 30);
+            g.setFont(new Font("Arial",Font.BOLD,25));
+            g.drawString(Integer.toString((int)bombs),140,45);
+            g.drawString("Score: "+score,190,45);
+            g.setColor(Color.BLACK);
+            g.fillOval(102, 22, 26, 26);
+
             if(bombMode) {
                 g.setColor(Color.WHITE);
                 g.fillOval(mouseX - 15, mouseY - 15, 30, 30);
@@ -76,6 +85,7 @@ public class GameWindow extends JFrame {
     private int offsetX, offsetY;
     private int spacing;
     private int score;
+    private int layers;
     private double bombs;
     private Board gameBoard;
     private boolean bombMode;
@@ -113,6 +123,9 @@ public class GameWindow extends JFrame {
                 }
                 mainPanel.repaint();
                 System.out.println(bombs + " * " + score);
+                if(gameBoard.checkGameOver(bombs)){
+                    System.out.println("GAME OVER!!!");
+                }
             }
 
             @Override
@@ -152,7 +165,7 @@ public class GameWindow extends JFrame {
         add(mainPanel);
 
 
-        setVisible(true);
+        setVisible(false);
     }
 
     private void setDefaultValues(){
@@ -164,6 +177,7 @@ public class GameWindow extends JFrame {
         tileHeight = 80;
         tileWidth = 60;
         spacing = 5;
+        layers = 1;
         offsetX = (width - horizAm*tileWidth - (horizAm-1)*spacing)/2;
         offsetY = (height - vertAm*tileHeight - (vertAm-1)*spacing)/2 -5;
     }
@@ -177,7 +191,7 @@ public class GameWindow extends JFrame {
     }
 
     public void resetGame(){
-        gameBoard = new Board(horizAm, vertAm, 3, 5);
+        gameBoard = new Board(horizAm, vertAm, layers, 3);
         bombMode = !gameBoard.checkForSets();
         score = 0;
         bombs = 0;

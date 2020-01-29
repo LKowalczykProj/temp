@@ -167,4 +167,26 @@ public class Board {
             boardMatrix.get(x).get(y).remove(0);
         }
     }
+
+    public boolean checkGameOver(double bombsRemaining){
+        boolean gameOver = true;
+        for(int i=0;i<width;i++){
+            for(int j=0; j<height;j++){
+                if(getValue(i,j)!=ERASE_VALUE){
+                    gameOver = false;
+                    break;
+                }
+            }
+            if(!gameOver){
+                break;
+            }
+        }
+        if(gameOver){
+            return true;
+        }
+        if (!checkForSets() && bombsRemaining < 1){
+            return true;
+        }
+        return false;
+    }
 }
