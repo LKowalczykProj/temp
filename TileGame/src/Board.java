@@ -168,25 +168,30 @@ public class Board {
         }
     }
 
-    public boolean checkGameOver(double bombsRemaining){
-        boolean gameOver = true;
+    public String checkGameOver(double bombsRemaining){
+        boolean gameOver = checkForEmptyBoard();
+        if(gameOver){
+            return "WIN";
+        }
+        if (!checkForSets() && bombsRemaining < 1){
+            return "LOSE";
+        }
+        return "CONTINUE";
+    }
+
+    public boolean checkForEmptyBoard(){
+        boolean empty = true;
         for(int i=0;i<width;i++){
             for(int j=0; j<height;j++){
                 if(getValue(i,j)!=ERASE_VALUE){
-                    gameOver = false;
+                    empty = false;
                     break;
                 }
             }
-            if(!gameOver){
+            if(!empty){
                 break;
             }
         }
-        if(gameOver){
-            return true;
-        }
-        if (!checkForSets() && bombsRemaining < 1){
-            return true;
-        }
-        return false;
+        return empty;
     }
 }

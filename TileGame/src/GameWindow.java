@@ -45,6 +45,14 @@ public class GameWindow extends JFrame {
                         g.setColor(mod.darken(new Color(245,155,105),gameBoard.getLevel(j,i)));
                         g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
                     }
+                    if(gameBoard.getValue(j,i) == 5) {
+                        g.setColor(mod.darken(new Color(245,60,60),gameBoard.getLevel(j,i)));
+                        g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
+                    }
+                    if(gameBoard.getValue(j,i) == 6) {
+                        g.setColor(mod.darken(new Color(255,255,255),gameBoard.getLevel(j,i)));
+                        g.fillRect(offsetX + j * tileWidth + spaceX, offsetY + i * tileHeight + spaceY, tileWidth, tileHeight);
+                    }
                     spaceX+=spacing;
                 }
                 spaceY+=spacing;
@@ -85,14 +93,24 @@ public class GameWindow extends JFrame {
     private int offsetX, offsetY;
     private int spacing;
     private int score;
-    private int layers;
+    private int layers, tileAmount;
     private double bombs;
     private Board gameBoard;
     private boolean bombMode;
     private BufferedImage background;
     private int mouseX, mouseY;
+    private int id;
 
-    public GameWindow(){
+    private static GameWindow instance;
+
+    public static GameWindow getInstance(){
+        if(instance==null){
+            instance = new GameWindow();
+        }
+        return instance;
+    }
+
+    private GameWindow(){
         setDefaultValues();
         setDefaultOptions();
         resetGame();
@@ -121,11 +139,14 @@ public class GameWindow extends JFrame {
                     }
                     bombMode = !gameBoard.checkForSets();
                 }
-                mainPanel.repaint();
-                System.out.println(bombs + " * " + score);
-                if(gameBoard.checkGameOver(bombs)){
+                String result = gameBoard.checkGameOver(bombs);
+                if(result.equals("LOSE")){
                     System.out.println("GAME OVER!!!");
                 }
+                if(result.equals("WIN")){
+                    resetGame();
+                }
+                mainPanel.repaint();
             }
 
             @Override
@@ -177,9 +198,13 @@ public class GameWindow extends JFrame {
         tileHeight = 80;
         tileWidth = 60;
         spacing = 5;
-        layers = 1;
+        layers = 2;
+        tileAmount = 4;
         offsetX = (width - horizAm*tileWidth - (horizAm-1)*spacing)/2;
         offsetY = (height - vertAm*tileHeight - (vertAm-1)*spacing)/2 -5;
+        id=1;
+        score = 0;
+        bombs = 0;
     }
 
     private void setDefaultOptions(){
@@ -187,18 +212,25 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(null);
         setResizable(false);
-        setTitle("TileGame - Level 1");
+        setTitle("TileGame");
     }
 
     public void resetGame(){
-        gameBoard = new Board(horizAm, vertAm, layers, 3);
+        gameBoard = new Board(horizAm, vertAm, layers, tileAmount);
         bombMode = !gameBoard.checkForSets();
-        score = 0;
-        bombs = 0;
         try{
-            background = ImageIO.read(new File("imgs/bg/bgIm5.jpg"));
+            background = ImageIO.read(new File("imgs/bg/bgIm"+id+".jpg"));
         }catch (Exception e){
             e.printStackTrace();
+        }
+        id+=1;
+        if(id>5){
+            dispose();
+        }
+        if(id%2==0){
+            tileAmount +=1;
+        } else {
+            layers +=1;
         }
     }
 }

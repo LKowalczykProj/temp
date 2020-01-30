@@ -1,15 +1,19 @@
 
-psquid:S3776H"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(¬†ìŒ8´âÎÑü-
-ysquid:S3008"VRename this field "ERASE_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃ„›şÿÿÿÿ8Úæ»Êü-
-Fsquid:S1659"#Declare "width" on a separate line.(»›Åîüÿÿÿÿ8üõÄÊü-
-Lsquid:S1066M"/Merge this if statement with the enclosing one.(ƒ–š8¹ÍÑü-
-Rsquid:S1066W"/Merge this if statement with the enclosing one.(ü´¼üÿÿÿÿ8óØÏÑü-
-Msquid:S1066R"/Merge this if statement with the enclosing one.(ïŸĞÕ8´âÎÑü-
-Msquid:S1066\"/Merge this if statement with the enclosing one.(­µıé8óØÏÑü-
-[
-squid:S106D"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8Œú¼Íü-
-jsquid:HiddenFieldCheckK"<Rename "tileValue" which hides the field declared at line 6.(ÄÒ’¯üÿÿÿÿ8ê€ÊÑü-
-U
-squid:S106B"9Replace this use of System.out or System.err by a logger.(Á²È
+Dsquid:S1659"#Declare "width" on a separate line.(»›Åîüÿÿÿÿ8üõÄÊü-
+hsquid:HiddenFieldCheck"<Rename "tileValue" which hides the field declared at line 6.(ÄÒ’¯üÿÿÿÿ8ê€ÊÑü-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(–ç¾üùÿÿÿÿ8˜åò–ÿ-
+Esquid:S1659"$Declare "height" on a separate line.(»›Åîüÿÿÿÿ8üõÄÊü-
+wsquid:S3008"VRename this field "ERASE_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃ„›şÿÿÿÿ8Úæ»Êü-
+Psquid:S1066"/Merge this if statement with the enclosing one.(ü´¼üÿÿÿÿ8óØÏÑü-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(–ç¾üùÿÿÿÿ8˜åò–ÿ-
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(Á²È
 8 ­»Íü-
-Gsquid:S1659"$Declare "height" on a separate line.(»›Åîüÿÿÿÿ8üõÄÊü-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8Œú¼Íü-
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(¬†ìŒ8´âÎÑü-
+Jsquid:S1066"/Merge this if statement with the enclosing one.(ƒ–š8¹ÍÑü-
+Ksquid:S1066"/Merge this if statement with the enclosing one.(ïŸĞÕ8´âÎÑü-
+Ksquid:S1066"/Merge this if statement with the enclosing one.(­µıé8óØÏÑü-

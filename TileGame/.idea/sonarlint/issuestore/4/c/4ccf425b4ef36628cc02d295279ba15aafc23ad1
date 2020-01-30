@@ -1,8 +1,13 @@
 
-[
-squid:S106@"9Replace this use of System.out or System.err by a logger.(ð½â­üÿÿÿÿ8«Ÿ¿Íü-
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øä“8ù¯óÉü-
-ysquid:S3008	"VRename this field "ERASE_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃ„›þÿÿÿÿ8Ü“šÒü-
-Bsquid:S1659"$Declare "height" on a separate line.(ô…ð­8ºüšÊü-
-[
-squid:S106B"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ8«Ÿ¿Íü-
+@squid:S1659"$Declare "height" on a separate line.(ô…ð­8©é€—ÿ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(—âÍýÿÿÿÿ8©é€—ÿ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ð½â­üÿÿÿÿ8©é€—ÿ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ8©é€—ÿ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(¹©Éú8©é€—ÿ-
+wsquid:S3008"VRename this field "ERASE_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃ„›þÿÿÿÿ8©é€—ÿ-
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øä“8©é€—ÿ-
+_squid:S1155">Use isEmpty() to check whether the collection is empty or not.(¬ööŠøÿÿÿÿ8©é€—ÿ-

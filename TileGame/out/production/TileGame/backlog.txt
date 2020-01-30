@@ -16,10 +16,10 @@ Done:
 - game over condition
 - game start window
 - bg_textures
+- level transition
 
 TODO:
 - levels in database
-- level transition
 
 maybe:
 - hints

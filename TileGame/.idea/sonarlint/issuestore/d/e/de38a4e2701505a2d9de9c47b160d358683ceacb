@@ -1,17 +1,23 @@
 
-Msquid:S2387;"/"height" is the name of a field in "Component".(ô…ğ­8ÚÏü-
-Ÿsquid:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãÆĞÂ8²· Ğü-
-[squid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ëñãğü-
-Bsquid:S1659;"$Declare "height" on a separate line.(ô…ğ­8îúÎü-
-lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(îè¶8Æ–Îü-
-Gsquid:S1659="$Declare "vertAm" on a separate line.(å×æ·şÿÿÿÿ8»ÈèÎü-
-psquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(¶øÂÁ8—®ŞĞü-
-¤squid:S1186o"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö„˜şúÿÿÿÿ8²· Ğü-
-Ksquid:S1659<"(Declare "tileHeight" on a separate line.(­Æˆ»şÿÿÿÿ8»ÈèÎü-
-¤squid:S1186t"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•ßçùÿÿÿÿ8²· Ğü-
-Isquid:S1948B"+Make "gameBoard" transient or serializable.(‹ô‹Ø8òåÂĞü-
-Lsquid:S2387;"."width" is the name of a field in "Component".(ô…ğ­8ÚÏü-
-V
-squid:S106a"9Replace this use of System.out or System.err by a logger.(È½ã¤8±æêğü-
-¤squid:S1186e"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®î’×üÿÿÿÿ8²· Ğü-
-Csquid:S1659>"%Declare "offsetY" on a separate line.(óâí8ÚÏü-
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÌÔö–ÿ-
+Tsquid:S2387"3"background" is the name of a field in "Component".(‰®öùÿÿÿÿ8ŞŠæ™ÿ-
+Msquid:S1948",Make "background" transient or serializable.(‰®öùÿÿÿÿ8ŞŠæ™ÿ-
+Asquid:S1659"%Declare "offsetY" on a separate line.(óâí8ŞŠæ™ÿ-
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö„˜şúÿÿÿÿ8±¬ú™ÿ-
+Isquid:S1659"(Declare "tileAmount" on a separate line.(âÜîñøÿÿÿÿ8ŞŠæ™ÿ-
+Esquid:S1659"$Declare "vertAm" on a separate line.(å×æ·şÿÿÿÿ8ÌÔö–ÿ-
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(¶øÂÁ8ÌÔö–ÿ-
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ü¤‘æ8±¬ú™ÿ-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8±¬ú™ÿ-
+Isquid:S1659"(Declare "tileHeight" on a separate line.(­Æˆ»şÿÿÿÿ8ÌÔö–ÿ-
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®î’×üÿÿÿÿ8±¬ú™ÿ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(‚Î‚ï8±¬ú™ÿ-
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãÆĞÂ8±¬ú™ÿ-
+Ksquid:S2387"/"height" is the name of a field in "Component".(ô…ğ­8ŞŠæ™ÿ-
+Jsquid:S2387"."width" is the name of a field in "Component".(ô…ğ­8ŞŠæ™ÿ-
+jsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(îè¶8ÌÔö–ÿ-
+Esquid:S1659"$Declare "mouseY" on a separate line.(ÄÀëÛıÿÿÿÿ8ŞŠæ™ÿ-
+@squid:S1659"$Declare "height" on a separate line.(ô…ğ­8ÌÔö–ÿ-
+Gsquid:S1948"+Make "gameBoard" transient or serializable.(‹ô‹Ø8ŞŠæ™ÿ-
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•ßçùÿÿÿÿ8±¬ú™ÿ-
