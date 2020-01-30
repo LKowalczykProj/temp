@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28d2851a-880a-4cf1-9f87-094eb9dcf0f6" name="Default" comment="Ver 1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36fc06fd4e06ed2c5201a49de2996ce56464e506" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36fc06fd4e06ed2c5201a49de2996ce56464e506" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4ccf425b4ef36628cc02d295279ba15aafc23ad1" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4ccf425b4ef36628cc02d295279ba15aafc23ad1" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de38a4e2701505a2d9de9c47b160d358683ceacb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de38a4e2701505a2d9de9c47b160d358683ceacb" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
+    <list default="true" id="28d2851a-880a-4cf1-9f87-094eb9dcf0f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imgs/bg/bgIm6.jpg" afterPath="$PROJECT_DIR$/imgs/bg/bgIm3.jpg" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/Board.class" afterPath="$PROJECT_DIR$/out/production/TileGame/Board.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/ColorModifier.class" afterPath="$PROJECT_DIR$/out/production/TileGame/ColorModifier.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/GameWindow$1.class" afterPath="$PROJECT_DIR$/out/production/TileGame/GameWindow$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/GameWindow$2.class" afterPath="$PROJECT_DIR$/out/production/TileGame/GameWindow$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/GameWindow$Canvas.class" afterPath="$PROJECT_DIR$/out/production/TileGame/GameWindow$Canvas.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/TileGame/GameWindow.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/Main.class" afterPath="$PROJECT_DIR$/out/production/TileGame/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TileGame/backlog.txt" afterPath="$PROJECT_DIR$/out/production/TileGame/backlog.txt" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
-      <change beforePath="$PROJECT_DIR$/src/ColorModifier.java" afterPath="$PROJECT_DIR$/src/ColorModifier.java" />
-      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" afterPath="$PROJECT_DIR$/src/GameWindow.java" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/backlog.txt" afterPath="$PROJECT_DIR$/src/backlog.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -214,6 +195,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Temporary/TileGame/src/BoardSnapshot.java" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Zadanie3-Piasek/Algorytm3" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -271,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579759887532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ver 1.2">
+      <created>1580402742742</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580402742742</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -347,7 +336,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ver 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ver 1.1" />
+    <MESSAGE value="Ver 1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ver 1.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -703,8 +693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
